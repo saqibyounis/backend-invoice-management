@@ -15,4 +15,4 @@ class WhatsAppMessageResponse(WhatsAppMessageBase):
     created_at: datetime
 
     class Config:
-        from_attributes = True
+        from_attributes = Truey
