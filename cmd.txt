@@ -1,0 +1,19 @@
+pip install -r requirements.txt
+
+#Docker Postgres setup.
+docker pull postgres
+docker run --name postgres-container -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=invoice_db -p 5432:5432 -d postgres
+docker ps
+docker exec -it postgres-container psql -U myuser -d invoice_db
+docker stop postgres-container
+docker rm postgres-container
+docker-compose up -d
+
+
+#Alembic (DB Migration)
+alembic init alembic
+alembic revision --autogenerate -m "migration message"
+alembic upgrade head
+alembic upgrade <revision_id>
+alembic downgrade -1
+

@@ -1,0 +1,33 @@
+# FastAPI Web Framework
+fastapi==0.110.0
+
+# ASGI Server
+uvicorn[standard]==0.29.0
+
+# Database & ORM
+sqlalchemy==2.0.29
+sqlite-utils==3.36.0    # If using SQLite
+psycopg2-binary==2.9.9  # If using PostgreSQL (remove if only using SQLite)
+alembic==1.13.1         # Database migrations
+
+# Data Validation
+pydantic==2.7.0
+pydantic-settings==2.2.1
+
+# Authentication
+python-dotenv==1.0.1    # .env file support for config
+
+# Background Tasks (optional)
+celery==5.3.6           # Task queue
+redis==5.0.3            # Redis for Celery (remove if not needed)
+
+# WhatsApp API Integration (Twilio / Meta API)
+twilio==9.0.0           # If using Twilio for WhatsApp
+httpx==0.27.0           # HTTP client for API requests
+
+# AWS Lambda Deployment (optional)
+mangum==0.17.0          # FastAPI → AWS Lambda adapter
+boto3==1.34.81          # AWS SDK for Python
+
+
+
